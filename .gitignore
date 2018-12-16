@@ -1,0 +1,47 @@
+*.orig
+.bash_history
+.gitconfig
+.ssh/known_hosts
+
+########## 1pgb ##########
+*/bin/
+*/obj/
+bin
+obj
+sh.exe.stackdump
+*.cache
+*.ncrunchproject
+
+########## Temp files ##########
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+########## Visual Studio ##########
+*.suo
+*.user
+*.sln.docstates
+
+*.tmp
+
+########## Webstorm ##########
+.idea
+
+########## Autotest ##########
+
+########## Calc ##########
+*.log
+*.jfm
+/Packages
+Packages/
+/Packages
+.vs/
+*.dbmdl
