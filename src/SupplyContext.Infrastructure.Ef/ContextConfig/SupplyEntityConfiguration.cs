@@ -12,9 +12,7 @@ namespace SupplyContext.Infrastructure.Ef.ContextConfig
 
             builder.Property<int>("Id").ValueGeneratedOnAdd();
             builder.HasKey("Id");
-
-            builder.Property<int?>("ListId");
-
+            
             builder.Property<bool>("Deleted")
                 .HasDefaultValue(false);
 
@@ -24,10 +22,12 @@ namespace SupplyContext.Infrastructure.Ef.ContextConfig
             builder.Property(e => e.Date);
             builder.Property(e => e.ContractorCode);
 
-            builder.HasOne(e=>e.TitleList)
-                .WithOne()
-                .HasForeignKey(nameof(Supply), "ListId")
-                .OnDelete(DeleteBehavior.Cascade);
+            //builder.HasOne(e=>e.TitleList)
+            //    .WithOne()
+            //    .HasForeignKey(nameof(Supply), "ListId")
+            //    .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasOne(e => e.TitleList);
         }
 
         

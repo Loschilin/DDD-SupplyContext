@@ -46,7 +46,7 @@ namespace SupplyContext.Console
 
             invoce.WhenListBeScan(invoceList);
 
-            //repo.Save(invoce);
+            repo.Save(invoce);
 
             var invoces = repo.Query(0, 10, null);
         }

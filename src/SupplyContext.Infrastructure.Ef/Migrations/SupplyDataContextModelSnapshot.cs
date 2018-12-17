@@ -98,17 +98,15 @@ namespace SupplyContext.Infrastructure.Ef.Migrations
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(false);
 
-                    b.Property<int?>("ListId");
-
                     b.Property<string>("Number");
+
+                    b.Property<int?>("TitleListId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ListId")
-                        .IsUnique()
-                        .HasFilter("[ListId] IS NOT NULL");
-
                     b.HasIndex("Number");
+
+                    b.HasIndex("TitleListId");
 
                     b.ToTable("Supplies","dbo");
                 });
@@ -124,9 +122,8 @@ namespace SupplyContext.Infrastructure.Ef.Migrations
             modelBuilder.Entity("SupplyContext.Domain.Supply", b =>
                 {
                     b.HasOne("SupplyContext.Domain.Entities.SupplyList", "TitleList")
-                        .WithOne()
-                        .HasForeignKey("SupplyContext.Domain.Supply", "ListId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany()
+                        .HasForeignKey("TitleListId");
                 });
 #pragma warning restore 612, 618
         }
